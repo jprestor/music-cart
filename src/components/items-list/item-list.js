@@ -8,12 +8,12 @@ import ErrorIndicator from '../error-indicator';
 const ItemList = ({ items, onShowInfo, onAddedToCart }) => {
   // Презентационный компонент. Отвечает за отрисовку
   return (
-    <ul>
+    <ul className="item-list">
       {items.map((item) => {
         const { id } = item;
 
         return (
-          <li key={id}>
+          <li className="item-list-item" key={id}>
             <ItemListItem
               item={item}
               onShowInfo={() => onShowInfo(id)}

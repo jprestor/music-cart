@@ -31,7 +31,7 @@ class LoginPage extends Component {
     const { loginSuccess, pending, loginError } = this.props;
 
     if (loginSuccess) {
-      return <Redirect to="/" />;
+      return <Redirect to="/account/" />;
     }
 
     return (

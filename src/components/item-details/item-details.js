@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
+import './item-details.css';
+
 const ItemDetails = ({ items, id }) => {
   const [item, setItem] = useState(null);
 
@@ -16,7 +18,7 @@ const ItemDetails = ({ items, id }) => {
   const { category, artist, title, playcount, text, imageBig, price } = item;
 
   return (
-    <div>
+    <div className="item-details">
       <img src={imageBig} alt="" />
       <p>
         <b>Artist: </b>

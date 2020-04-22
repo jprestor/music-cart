@@ -11,7 +11,7 @@ export default class LastfmService {
     if (!res.ok) {
       throw new Error(`Could not fetch ${url}, received ${res.status}`);
     }
-    return await res.json();
+    return res.json();
   };
 
   getSingles = async () => {
@@ -30,7 +30,7 @@ export default class LastfmService {
 
   // Mapping
   _extractImage = (obj, isBigSize) => {
-    const imageObj = obj.image[isBigSize ? 3 : 0];
+    const imageObj = obj.image[isBigSize ? 3 : 1];
     let image;
     for (let key in imageObj) {
       if (imageObj[key].length > 10) {

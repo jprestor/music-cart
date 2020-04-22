@@ -33,7 +33,7 @@ const PageHeader = ({ count }) => {
               Top singles
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item  nav-item--cart">
             <Link className="nav-link" to="/cart/">
               Cart <CartItemsCounter count={count} />
             </Link>
@@ -56,7 +56,7 @@ const PageHeader = ({ count }) => {
 
 const mapStateToProps = ({ shoppingCart: { totalCount } }) => {
   return {
-    count: totalCount
+    count: totalCount,
   };
 };
 

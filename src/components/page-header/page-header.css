@@ -1,0 +1,8 @@
+.nav-item--cart {
+  margin-left: auto;
+}
+
+.cart-items-counter {
+  color: red;
+  font-weight: 500;
+}

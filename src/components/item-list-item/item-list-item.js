@@ -8,8 +8,11 @@ const ItemListItem = ({ item, onAddedToCart, onShowInfo }) => {
       <img className="item-image" src={imageSmall} />
 
       <div className="item-details">
-        <p className="item-title">{title}</p>
-        <p className="item-artist">{artist}</p>
+        <p>
+          <b className="item-title">{title}</b>
+          <span> - </span>
+          <span className="item-artist">{artist}</span>
+        </p>
 
         <div className="item-buttons">
           <button className="btn btn-info" onClick={onShowInfo}>

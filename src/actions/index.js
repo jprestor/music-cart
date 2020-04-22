@@ -87,7 +87,6 @@ const login = (callApi, email, password) => (dispatch) => {
       dispatch(setLoginSuccess());
     })
     .catch((error) => {
-      console.log(error);
       dispatch(setLoginError(error));
     });
 
