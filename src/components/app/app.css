@@ -1,5 +1,17 @@
+html,
+body,
+.music-cart-app {
+  height: 100%;
+}
+
+.music-cart-app {
+  display: flex;
+  flex-direction: column;
+}
+
 .page-main {
-  padding-top: 30px;
+  flex-grow: 1;
+  padding: 30px 15px 45px;
 }
 
 h1 {
@@ -19,4 +31,16 @@ h1 span {
   color: rgba(0, 0, 0, 0.9);
   font-weight: 400;
   font-style: normal;
+}
+
+/* form */
+form label {
+  margin-right: 8px;
+}
+form input {
+  padding: 2px 5px;
+}
+form input[type='submit'] {
+  margin-bottom: 10px;
+  padding: 5px 10px;
 }

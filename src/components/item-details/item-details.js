@@ -43,12 +43,6 @@ const ItemDetails = ({ items, id }) => {
   );
 };
 
-// const AlbumsDetails = () => {
-//   return (
-
-//   );
-// };
-
 const mapStateToProps = ({ itemsList: { items } }) => {
   return {
     items,

@@ -9,7 +9,7 @@ import {
   TopAlbumsPage,
   CartPage,
   LoginPage,
-  AccountPage
+  AccountPage,
 } from '../pages';
 
 import './app.css';

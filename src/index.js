@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom'; // HashRouter вместо Router для деплоя в gh-pages
 
 import App from './components/app';
 import ErrorBoundry from './components/error-boundry';
@@ -16,7 +16,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ErrorBoundry>
       <LastfmServiceProvider value={lastfmService}>
-        <Router>
+        <Router basename="/">
           <App />
         </Router>
       </LastfmServiceProvider>

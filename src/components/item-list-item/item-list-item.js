@@ -5,7 +5,7 @@ const ItemListItem = ({ item, onAddedToCart, onShowInfo }) => {
 
   return (
     <Fragment>
-      <img className="item-image" src={imageSmall} />
+      <img className="item-image" src={imageSmall} alt="" />
 
       <div className="item-details">
         <p>

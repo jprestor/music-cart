@@ -2,7 +2,7 @@ export default class LastfmService {
   _apiKey = `58a12fdc7d2606d49f7abdabae85de78`;
 
   _getUrl = (apiMethod, id) => {
-    return `http://ws.audioscrobbler.com/2.0/?method=${apiMethod}&api_key=${this._apiKey}&format=json&limit=10`;
+    return `https://ws.audioscrobbler.com/2.0/?method=${apiMethod}&api_key=${this._apiKey}&format=json&limit=10`;
   };
 
   getResource = async (url) => {

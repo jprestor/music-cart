@@ -10,8 +10,8 @@ import { bindActionCreators } from 'redux';
 
 class LoginPage extends Component {
   state = {
-    email: '',
-    password: '',
+    email: 'admin@example.com',
+    password: 'admin',
   };
 
   onSubmit = (e) => {
@@ -64,7 +64,7 @@ class LoginPage extends Component {
           <input type="submit" value="Login" />
 
           {pending && <Spinner />}
-          {loginError && <div>{loginError.message}</div>}
+          {loginError && <p>{loginError.message}</p>}
         </form>
       </div>
     );

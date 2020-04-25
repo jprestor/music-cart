@@ -1,3 +1,7 @@
+.navbar-brand {
+  padding-left: 0;
+}
+
 .nav-item--cart {
   margin-left: auto;
 }

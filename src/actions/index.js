@@ -1,5 +1,3 @@
-import callLoginApi from '../services/login-service';
-
 const setLoginSuccess = () => {
   return 'SET_LOGIN_SUCCESS';
 };

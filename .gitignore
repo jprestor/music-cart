@@ -2,4 +2,6 @@
 build/
 package-lock.json
 yarn.lock
+.prettierrc.json
+snippets.json
 *.code-workspace
