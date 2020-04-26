@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jprestor/music-cart.git"
+    "url": "https://github.com/jprestor/music-cart"
   },
   "author": "Dmitrtiy Miroshnichecnko",
   "license": "ISC",
