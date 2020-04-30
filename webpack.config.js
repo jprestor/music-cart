@@ -48,16 +48,19 @@ module.exports = (env = {}) => {
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
+
         // Loading SASS
         {
           test: /\.(s[ca]ss)$/,
           use: [...getStyleLoaders(), 'sass-loader'],
         },
+
         // Loading CSS
         {
           test: /\.css$/,
           use: getStyleLoaders(),
         },
+
         // Loading Images
         {
           test: /\.(png|jpg|jpeg|gif)$/,
@@ -71,6 +74,7 @@ module.exports = (env = {}) => {
             },
           ],
         },
+
         // Loading Fonts
         {
           test: /\.(ttf|otf|eot|woff|woff2)$/,

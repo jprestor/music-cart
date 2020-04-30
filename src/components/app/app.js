@@ -20,14 +20,15 @@ const App = () => {
       <PageHeader />
 
       <main className="page-main  container">
+        {/* Отрисовывает только первый элемент, который соответсвует адресу */}
         <Switch>
           <Route path="/" component={HomePage} exact />
-          <Route path="/top-albums/:id?" component={TopAlbumsPage} />
+          <Route path="/top-albums/:id?" component={TopAlbumsPage} />{' '}
+          {/* С опциональными параметрами */}
           <Route path="/top-singles/:id?" component={TopSinglesPage} />
           <Route path="/cart/" component={CartPage} />
           <Route path="/login/" component={LoginPage} />
           <Route path="/account/" component={AccountPage} />
-
           <Route render={() => <h2>Page not found</h2>} />
         </Switch>
       </main>

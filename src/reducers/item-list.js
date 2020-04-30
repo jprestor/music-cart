@@ -29,7 +29,7 @@ const updateItemsList = (state, action) => {
         error: null,
       };
 
-    case 'FETCH_ITEMS_SUCCESS':
+    case 'FETCH_DATA_SUCCESS':
       return {
         items: updateItemsArray(items, action.payload),
         loading: false,

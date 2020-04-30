@@ -10,5 +10,11 @@
     ],
     "@babel/react"
   ],
-  "plugins": ["@babel/proposal-class-properties"]
+  "plugins": ["@babel/proposal-class-properties"],
+
+  "env": {
+    "test": {
+      "presets": ["@babel/env"]
+    }
+  }
 }

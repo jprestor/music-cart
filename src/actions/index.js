@@ -13,9 +13,9 @@ const setLoginError = (error) => {
   };
 };
 
-const fetchItemsSuccess = (newItems) => {
+const fetchDataSuccess = (newItems) => {
   return {
-    type: 'FETCH_ITEMS_SUCCESS',
+    type: 'FETCH_DATA_SUCCESS',
     payload: newItems,
   };
 };
@@ -58,7 +58,7 @@ const itemDeletedFromCart = (id) => {
 //   lastfmService
 //     .getSingles()
 //     .then((data) => {
-//       dispatch(fetchItemsSuccess(data));
+//       dispatch(fetchDataSuccess(data));
 //     })
 //     .catch((error) => {
 //       dispatch(fetchDataFailure(error));
@@ -70,7 +70,7 @@ const fetchData = (getData) => () => (dispatch) => {
 
   getData()
     .then((data) => {
-      dispatch(fetchItemsSuccess(data));
+      dispatch(fetchDataSuccess(data));
     })
     .catch((error) => {
       dispatch(fetchDataFailure(error));
