@@ -1,0 +1,120 @@
+.navbar-brand {
+  padding-left: 0;
+}
+
+.nav-item--cart {
+  margin-left: auto;
+}
+
+.cart-items-counter {
+  color: red;
+  font-weight: 500;
+}
+
+.copyrights {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.copyrights p {
+  margin: 0;
+}
+
+
+.item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-list-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid gray;
+  /* border-right: none;
+  border-left: none; */
+}
+
+.item-image {
+  margin-bottom: 10px;
+}
+
+.item-buttons .btn {
+  margin-right: 10px;
+}
+
+
+
+.item-details {
+  position: sticky;
+  top: 20px;
+}
+
+.item-details img {
+  margin-bottom: 15px;
+}
+
+.shopping-cart-table {
+  margin-top: 45px;
+}
+
+.shopping-cart-table .total {
+  text-align: right;
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.shopping-cart-table button {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+html,
+body,
+.music-cart-app {
+  height: 100%;
+}
+
+.music-cart-app {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-main {
+  flex-grow: 1;
+  padding: 30px 15px 45px;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+h1 span {
+  font-size: 0.75em;
+}
+
+.home-page-title {
+  margin-top: 30px;
+  font-size: 3.5rem;
+}
+
+.home-page-title i {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* form */
+form label {
+  margin-right: 8px;
+}
+form input {
+  padding: 2px 5px;
+}
+form input[type='submit'] {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
