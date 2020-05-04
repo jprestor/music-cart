@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Component renders correctly 1`] = `
+LoginPage {
+  "context": Object {},
+  "onSubmit": [Function],
+  "props": Object {
+    "loginError": null,
+    "loginSuccess": true,
+    "pending": false,
+  },
+  "refs": Object {},
+  "setState": [Function],
+  "state": Object {
+    "email": "admin@example.com",
+    "password": "admin",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_didScheduleRenderPhaseUpdate": false,
+      "_dispatcher": Object {
+        "readContext": [Function],
+        "useCallback": [Function],
+        "useContext": [Function],
+        "useDebugValue": [Function],
+        "useDeferredValue": [Function],
+        "useEffect": [Function],
+        "useImperativeHandle": [Function],
+        "useLayoutEffect": [Function],
+        "useMemo": [Function],
+        "useReducer": [Function],
+        "useRef": [Function],
+        "useResponder": [Function],
+        "useState": [Function],
+        "useTransition": [Function],
+      },
+      "_element": <LoginPage
+        loginError={null}
+        loginSuccess={true}
+        pending={false}
+      />,
+      "_firstWorkInProgressHook": null,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_isReRender": false,
+      "_newState": null,
+      "_numberOfReRenders": 0,
+      "_renderPhaseUpdates": null,
+      "_rendered": <Redirect
+        to="/account/"
+      />,
+      "_rendering": false,
+      "_updater": [Circular],
+      "_workInProgressHook": null,
+    },
+  },
+}
+`;

@@ -1,3 +1,8 @@
+.item-details {
+  position: sticky;
+  top: 20px;
+}
+
 .item-details img {
   margin-bottom: 15px;
 }

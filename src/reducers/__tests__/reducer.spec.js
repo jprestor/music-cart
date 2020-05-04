@@ -1,7 +1,7 @@
-import reducer from './index';
+import reducer from '../index';
 
 describe('test reducer', () => {
-  it('returns correct state object by initial', () => {
+  it('should return correct initial state', () => {
     expect(reducer(undefined)).toEqual({
       login: {
         success: false,

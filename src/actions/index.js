@@ -52,19 +52,6 @@ const itemDeletedFromCart = (id) => {
   };
 };
 
-// const fetchDataOld = (lastfmService, dispatch) => () => {
-//   dispatch(fetchDataRequest());
-
-//   lastfmService
-//     .getSingles()
-//     .then((data) => {
-//       dispatch(fetchDataSuccess(data));
-//     })
-//     .catch((error) => {
-//       dispatch(fetchDataFailure(error));
-//     });
-// };
-
 const fetchData = (getData) => () => (dispatch) => {
   dispatch(fetchDataRequest());
 
@@ -77,7 +64,7 @@ const fetchData = (getData) => () => (dispatch) => {
     });
 };
 
-const login = (callApi, email, password) => (dispatch) => {
+const login = (callApi) => (email, password) => (dispatch) => {
   dispatch(setLoginPending());
 
   callApi(email, password)
@@ -87,15 +74,6 @@ const login = (callApi, email, password) => (dispatch) => {
     .catch((error) => {
       dispatch(setLoginError(error));
     });
-
-  // callApi(email, password, (error) => {
-  //   if (!error) {
-  //     dispatch(setLoginSuccess());
-  //   } else {
-  //     console.error(error);
-  //     dispatch(setLoginError(error));
-  //   }
-  // });
 };
 
 export {

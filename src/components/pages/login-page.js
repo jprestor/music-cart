@@ -82,22 +82,11 @@ const mapStateToProps = ({ login }) => {
 const mapDispatchToProps = (dispatch) => {
   const { callApi } = new LoginService();
 
-  return bindActionCreators(
-    {
-      login: (email, password) => login(callApi, email, password),
-    },
-    dispatch
-  );
+  return bindActionCreators({ login: login(callApi) }, dispatch);
+
+  /* - bindActionCreators вернет () => dispatch(action())
+   * - thunk позволяет передать в dispatch функцию в качестве параметра
+   */
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({ login }, dispatch);
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     login: (email, password) => dispatch(login(email, password))
-//   };
-// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

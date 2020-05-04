@@ -10,6 +10,7 @@ import ItemsList from '../items-list';
 import ItemDetails from '../item-details';
 import { withRouter } from 'react-router-dom';
 
+/* -- AlbumsList ---- */
 const mapStateToProps = ({ itemsList: { items, loading, error } }) => {
   items = items.filter((i) => i.category === 'album');
 
@@ -20,11 +21,34 @@ const mapStateToProps = ({ itemsList: { items, loading, error } }) => {
   };
 };
 
+/*
+Как можно сконфигурировать mapDispatchToProps
+
+const mapDispatchToProps = (dispatch, { lastfmService }) => {
+  return {
+    creator1: dispatch(creator1()),
+    creator2: (id) => dispatch(creator2(id))
+  };
+}; 
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ creator1, creator2 }, dispatch);
+};
+
+const mapDispatchToProps = {
+  creator1,
+  creator2,
+};
+*/
+
 const mapDispatchToProps = (dispatch, { lastfmService }) => {
   return bindActionCreators(
     {
       fetchData: fetchData(lastfmService.getAlbums),
-      onAddedToCart: itemAddedToCart, // Благодаря Thunk мы можем передать в dispatch функцию в качестве действия
+      onAddedToCart: itemAddedToCart,
+      /* - bindActionCreators вернет () => dispatch(action())
+       * - thunk позволяет передать в dispatch функцию в качестве действия
+       */
     },
     dispatch
   );
@@ -35,6 +59,7 @@ const AlbumsList = compose(
   connect(mapStateToProps, mapDispatchToProps)
 )(ItemsList);
 
+/* -- TopAlbumsPage ---- */
 const TopAlbumsPage = ({ history, match }) => {
   const { id } = match.params;
 

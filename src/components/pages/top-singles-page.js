@@ -10,38 +10,22 @@ import ItemList from '../items-list';
 import ItemDetails from '../item-details';
 import { withRouter } from 'react-router-dom';
 
+/* -- SinglesList ---- */
 const mapStateToProps = ({ itemsList: { items, loading, error } }) => {
   items = items.filter((i) => i.category === 'single');
 
   return {
     items,
     loading,
-    error
+    error,
   };
 };
-
-// const mapDispatchToProps = {
-//   topArtistsLoaded,
-//   dataRequested,
-//   dataFetchError
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({ topArtistsLoaded }, dispatch);
-// };
-
-// const mapDispatchToProps = (dispatch, { lastfmService }) => {
-//   return {
-//     fetchData: fetchData(lastfmService, dispatch),
-//     onAddedToCart: (id) => dispatch(itemAddedToCart(id))
-//   };
-// };
 
 const mapDispatchToProps = (dispatch, { lastfmService }) => {
   return bindActionCreators(
     {
       fetchData: fetchData(lastfmService.getSingles),
-      onAddedToCart: itemAddedToCart // Благодаря Thunk мы можем передать в dispatch функцию в качестве действия
+      onAddedToCart: itemAddedToCart,
     },
     dispatch
   );
@@ -52,6 +36,7 @@ const SinglesList = compose(
   connect(mapStateToProps, mapDispatchToProps)
 )(ItemList);
 
+/* -- TopSinglesPage ---- */
 const TopSinglesPage = ({ history, match }) => {
   const { id } = match.params;
 
