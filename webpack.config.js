@@ -10,7 +10,12 @@ module.exports = (env = {}) => {
   const getStyleLoaders = () => {
     return [
       isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          sourceMap: true,
+        },
+      },
     ];
   };
 
@@ -35,16 +40,17 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProd ? 'production' : isDev && 'development',
-
+    entry: './src/index.tsx',
     output: {
       filename: isProd ? 'main-[hash:8].js' : undefined,
     },
+    resolve: { extensions: ['.ts', '.tsx', '.js'] },
 
     module: {
       rules: [
         // Loading JS
         {
-          test: /\.js$/,
+          test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
@@ -52,7 +58,16 @@ module.exports = (env = {}) => {
         // Loading SASS
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), 'sass-loader'],
+          use: [
+            ...getStyleLoaders(),
+            {
+              loader: 'sass-loader',
+              options: {
+                // To enable CSS source maps, you'll need to pass the sourceMap option to the sass-loader and the css-loader
+                sourceMap: true,
+              },
+            },
+          ],
         },
 
         // Loading CSS
@@ -68,7 +83,7 @@ module.exports = (env = {}) => {
             {
               loader: 'file-loader',
               options: {
-                outputPath: 'images',
+                outputPath: 'assets/images',
                 name: '[name]-[sha1:hash:7].[ext]',
               },
             },
@@ -82,7 +97,7 @@ module.exports = (env = {}) => {
             {
               loader: 'file-loader',
               options: {
-                outputPath: 'fonts',
+                outputPath: 'assets/fonts',
                 name: '[name].[ext]',
               },
             },
@@ -96,5 +111,7 @@ module.exports = (env = {}) => {
     devServer: {
       open: true, // автоматически открывает браузер
     },
+
+    devtool: 'eval-cheap-source-map',
   };
 };
