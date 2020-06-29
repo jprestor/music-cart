@@ -1,5 +1,9 @@
+// const path = require('path');
+// const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = (env = {}) => {
   const { mode = 'development' } = env;
@@ -29,6 +33,7 @@ module.exports = (env = {}) => {
 
     if (isProd) {
       plugins.push(
+        new BundleAnalyzerPlugin(),
         new MiniCssExtractPlugin({
           filename: 'main-[hash:8].css',
         })
@@ -40,7 +45,6 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProd ? 'production' : isDev && 'development',
-    entry: './src/index.tsx',
     output: {
       filename: isProd ? 'main-[hash:8].js' : undefined,
     },
@@ -112,6 +116,6 @@ module.exports = (env = {}) => {
       open: true, // автоматически открывает браузер
     },
 
-    devtool: 'eval-cheap-source-map',
+    devtool: isDev ? 'eval-cheap-source-map' : undefined,
   };
 };
